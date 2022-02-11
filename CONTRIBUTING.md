@@ -27,3 +27,17 @@ Thanks for wanting to contribute to RCW! Here are some pull request guidelines:
 - Don't forget to update readme/docs
 - Ensure `npm run lint` passes
   - `npm run lint -- --fix` will autofix where possible (in general, `--` passes any flags following it)
+
+## Releasing
+
+On a new branch (it can't be done on `master` as it is protected):
+
+`npm version [major | minor | patch]` to bump version (use [semantic versioning](https://semver.org/))
+
+`git push —-tags` to keep tags up to date on github
+
+`npm publish` to release to the world! (use with `--dry-run` to test it out)
+
+Then, push your branch as normal and open a PR to merge it into master.
+
+`npm run gh:publish` to update the demo hosted on github pages.
